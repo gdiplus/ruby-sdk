@@ -141,6 +141,11 @@ module Qiniu
           url = Config.settings[:api_host] + '/v7/domain/list?tbl=' + bucket
           return HTTP.management_post(url)
         end
+              
+        def drop(bucket)
+          url = Config.settings[:rs_host] + '/drop/' + bucket
+          return HTTP.management_post(url)
+        end
 
         private
 
